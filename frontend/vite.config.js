@@ -1,12 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// Define backend API URL based on environment
 const API_BASE_URL = "https://socialty.vercel.app";
 
 export default defineConfig({
   plugins: [react()],
-  base: process.env.VITE_BASE_PATH || "/",  // ⬅️ Ensure correct base path
+  base: process.env.VITE_BASE_PATH || "/",
   build: {
     outDir: "dist",
   },
