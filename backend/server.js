@@ -23,11 +23,10 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json()); // to parse the incoming requests with JSON payloads (from req.body)
 app.use(cookieParser());
 app.use(cors({
-  origin: ["https://socialty-g9qg.vercel.app"], 
-  methods: ["POST", "GET"],// Your frontend URL
-  credentials: true,
+  origin: "https://socialty-g9qg.vercel.app", // Your frontend URL
+  methods: ["POST", "GET", "PUT", "DELETE"], // Allowed HTTP methods
+  credentials: true, // Allow cookies and credentials
 }));
-
 
 
 app.use("/api/auth", authRoutes);
