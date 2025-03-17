@@ -18,7 +18,7 @@ const Login = () => {
       <div className='w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-2xl'>
         <h1 className='text-4xl font-bold text-center'>
           <span className='text-gray-800'>Welcome to </span>
-          <span className='text-blue-600'>Socialty</span>
+          <span className='text-blue-600'>sociality</span>
         </h1>
 
         <form onSubmit={handleSubmit} className='space-y-6'>
