@@ -36,7 +36,9 @@ app.use("/api/posts", postRoutes);
 app.use("/api/games", gameRoutes);
 
 
-
+app.get("/", (req, res) => {
+  res.send("Welcome to the Socialty API");
+});
 
 server.listen(PORT, () => {
 	connectToMongoDB();
