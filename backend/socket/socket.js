@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
 	cors: {
-		origin: ["https://socialty.vercel.app"],
+		origin: ["https://socialty-g9qg.vercel.app"],
 		methods: ["GET", "POST"],
 	},
 });
