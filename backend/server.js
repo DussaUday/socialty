@@ -37,11 +37,7 @@ app.use("/api/posts", postRoutes);
 app.use("/api/games", gameRoutes);
 
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
-app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "frontend", "index.html"));
-});
 
 server.listen(PORT, () => {
 	connectToMongoDB();
