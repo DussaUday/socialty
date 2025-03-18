@@ -62,7 +62,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
             const uniqueUserIds = [...new Set(userIds)]; // Ensure unique user IDs
             const details = await Promise.all(
                 uniqueUserIds.map(async (id) => {
-                    const response = await fetch(`/api/users/${id}`);
+                    const response = await fetch(`https://sociality-backend-api.onrender.com/users/${id}`);
                     if (!response.ok) {
                         return null; // Skip deleted users
                     }
@@ -79,7 +79,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
     const handleAcceptFollowRequest = async (requestUserId) => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/users/accept-follow/${requestUserId}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/users/accept-follow/${requestUserId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -109,7 +109,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
     const handleRejectFollowRequest = async (requestUserId) => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/users/reject-follow/${requestUserId}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/users/reject-follow/${requestUserId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -146,7 +146,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
     const handleUnfollow = async (userIdToUnfollow) => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/users/unfollow/${userIdToUnfollow}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/users/unfollow/${userIdToUnfollow}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -174,7 +174,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
     const handleFollowBack = async (userIdToFollow) => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/users/follow/${userIdToFollow}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/users/follow/${userIdToFollow}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
