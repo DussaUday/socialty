@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-const API_BASE_URL = "https://socialty.vercel.app";
+const API_BASE_URL = "https://sociality-backend-api.onrender.com";
 
 export default defineConfig({
   plugins: [react()],
