@@ -11,7 +11,7 @@ const useFollowRequests = (userId) => {
     const handleAcceptFollowRequest = async (requestUserId) => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/users/accept-follow/${requestUserId}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/users/accept-follow/${requestUserId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const useFollowRequests = (userId) => {
     const handleRejectFollowRequest = async (requestUserId) => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/users/reject-follow/${requestUserId}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/users/reject-follow/${requestUserId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
