@@ -37,7 +37,7 @@ const usePost = () => {
     const getPosts = async () => {
         setLoading(true);
         try {
-            const res = await fetch("https://socialty.vercel.app/api/posts/getPosts", {
+            const res = await fetch("/api/posts/getPosts", {
                 headers: {
                     Authorization: `Bearer ${authUser.token}`,
                 },
