@@ -42,5 +42,6 @@ app.get("/", (req, res) => {
 
 server.listen(PORT, () => {
 	connectToMongoDB();
+	res.send("connected to mongodb");
 	console.log(`Server Running on port ${PORT}`);
 });
