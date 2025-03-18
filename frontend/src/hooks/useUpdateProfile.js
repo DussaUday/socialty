@@ -13,7 +13,7 @@ const useUpdateProfile = () => {
         formData.append('profilePic', profilePic);
       }
 
-      const response = await axios.put('/api/users/update-profile', formData, {
+      const response = await axios.put('https://sociality-backend-api.onrender.com/users/update-profile', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
