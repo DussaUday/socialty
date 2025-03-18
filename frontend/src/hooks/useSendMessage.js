@@ -9,7 +9,7 @@ const useSendMessage = () => {
     const sendMessage = async (formData) => {
         setLoading(true);
         try {
-            const res = await fetch(`/api/messages/send/${selectedConversation._id}`, {
+            const res = await fetch(`https://sociality-backend-api.onrender.com/messages/send/${selectedConversation._id}`, {
                 method: "POST",
                 body: formData, // Send FormData directly
             });
