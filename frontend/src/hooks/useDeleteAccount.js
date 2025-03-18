@@ -11,7 +11,7 @@ export const useDeleteAccount = () => {
     const deleteAccount = async () => {
         setLoading(true);
         try {
-            const url = "/api/users/account/delete";
+            const url = "https://sociality-backend-api.onrender.com/users/account/delete";
             console.log("Deleting account from URL:", url);
 
             const res = await fetch(url, {
