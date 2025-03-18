@@ -12,7 +12,7 @@ const useProfile = (userId) => {
         try {
             const details = await Promise.all(
                 userIds.map(async (id) => {
-                    const response = await fetch(`/api/users/${id}`);
+                    const response = await fetch(`https://sociality-backend-api.onrender.com/users/${id}`);
                     const data = await response.json();
                     return data;
                 })
@@ -26,7 +26,7 @@ const useProfile = (userId) => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const res = await fetch(`/api/users/${userId}`);
+                const res = await fetch(`https://sociality-backend-api.onrender.com/users/${userId}`);
                 const data = await res.json();
                 if (data.error) throw new Error(data.error);
 
