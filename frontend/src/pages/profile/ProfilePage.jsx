@@ -62,7 +62,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
             const uniqueUserIds = [...new Set(userIds)]; // Ensure unique user IDs
             const details = await Promise.all(
                 uniqueUserIds.map(async (id) => {
-                    const response = await fetch(`https://socialty.vercel.app/api/users/${id}`);
+                    const response = await fetch(`/api/users/${id}`);
                     if (!response.ok) {
                         return null; // Skip deleted users
                     }
@@ -79,7 +79,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
     const handleAcceptFollowRequest = async (requestUserId) => {
         setLoading(true);
         try {
-            const response = await fetch(`https://socialty.vercel.app/api/users/accept-follow/${requestUserId}`, {
+            const response = await fetch(`/api/users/accept-follow/${requestUserId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -109,7 +109,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
     const handleRejectFollowRequest = async (requestUserId) => {
         setLoading(true);
         try {
-            const response = await fetch(`https://socialty.vercel.app/api/users/reject-follow/${requestUserId}`, {
+            const response = await fetch(`/api/users/reject-follow/${requestUserId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -146,7 +146,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
     const handleUnfollow = async (userIdToUnfollow) => {
         setLoading(true);
         try {
-            const response = await fetch(`https://socialty.vercel.app/api/users/unfollow/${userIdToUnfollow}`, {
+            const response = await fetch(`/api/users/unfollow/${userIdToUnfollow}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -174,7 +174,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
     const handleFollowBack = async (userIdToFollow) => {
         setLoading(true);
         try {
-            const response = await fetch(`https://socialty.vercel.app/api/users/follow/${userIdToFollow}`, {
+            const response = await fetch(`/api/users/follow/${userIdToFollow}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -234,7 +234,7 @@ const ProfilePage = ({ userId, onNewFollowRequest }) => {
         }
 
         try {
-            const response = await fetch(`https://socialty.vercel.app/api/auth/edit-profile/${userId}`, {
+            const response = await fetch(`/api/auth/edit-profile/${userId}`, {
                 method: "PUT",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
