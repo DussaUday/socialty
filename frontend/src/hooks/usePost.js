@@ -16,7 +16,7 @@ const usePost = () => {
     const createPost = async (formData) => {
         setLoading(true);
         try {
-            const res = await fetch("/api/posts/create", {
+            const res = await fetch("https://sociality-backend-api.onrender.com/posts/create", {
                 method: "POST",
                 body: formData,
                 headers: {
@@ -37,7 +37,7 @@ const usePost = () => {
     const getPosts = async () => {
         setLoading(true);
         try {
-            const res = await fetch("/api/posts/getPosts", {
+            const res = await fetch("https://sociality-backend-api.onrender.com/posts/getPosts", {
                 headers: {
                     Authorization: `Bearer ${authUser.token}`,
                 },
@@ -61,7 +61,7 @@ const usePost = () => {
 
     const likePost = async (postId) => {
         try {
-            const res = await fetch(`/api/posts/like/${postId}`, {
+            const res = await fetch(`https://sociality-backend-api.onrender.com/posts/like/${postId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -82,7 +82,7 @@ const usePost = () => {
 
     const commentPost = async (postId, comment) => {
         try {
-            const res = await fetch(`/api/posts/comment/${postId}`, {
+            const res = await fetch(`https://sociality-backend-api.onrender.com/posts/comment/${postId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const usePost = () => {
 
     const deletePost = async (postId) => {
         try {
-            const res = await fetch(`/api/posts/delete/${postId}`, {
+            const res = await fetch(https://sociality-backend-api.onrender.com/posts/delete/${postId}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${authUser.token}`,
@@ -121,7 +121,7 @@ const usePost = () => {
     const getCurrentUserPosts = async () => {
         setLoading(true);
         try {
-            const res = await fetch("/api/posts/current-user", {
+            const res = await fetch("https://sociality-backend-api.onrender.com/posts/current-user", {
                 headers: {
                     Authorization: `Bearer ${authUser.token}`,
                 },
