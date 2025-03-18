@@ -12,7 +12,7 @@ const useProfile = (userId) => {
         try {
             const details = await Promise.all(
                 userIds.map(async (id) => {
-                    const response = await fetch(`https://socialty.vercel.app/api/users/${id}`);
+                    const response = await fetch(`/api/users/${id}`);
                     const data = await response.json();
                     return data;
                 })
