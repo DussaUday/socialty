@@ -23,7 +23,7 @@ const useSignup = () => {
 		  formData.append("profilePic", profilePic);
 		}
   
-		const res = await fetch("/api/auth/signup", {
+		const res = await fetch("https://sociality-backend-api.onrender.com/auth/signup", {
 		  method: "POST",
 		  body: formData,
 		});
