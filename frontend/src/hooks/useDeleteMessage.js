@@ -5,7 +5,7 @@ const useDeleteMessage = () => {
 
 	const deleteMessage = async (messageId) => {
 		try {
-			await fetch(`/api/messages/delete/${messageId}`, { method: "DELETE" });
+			await fetch(`https://sociality-backend-api.onrender.com/messages/delete/${messageId}`, { method: "DELETE" });
 			setMessages(
 				messages.map((msg) =>
 					msg._id === messageId ? { ...msg, message: "This message is deleted.", deleted: true } : msg
