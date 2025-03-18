@@ -23,7 +23,7 @@ const useSignup = () => {
 		  formData.append("profilePic", profilePic);
 		}
   
-		const res = await fetch("https://socialty.vercel.app/api/auth/signup", {
+		const res = await fetch("/api/auth/signup", {
 		  method: "POST",
 		  body: formData,
 		});
