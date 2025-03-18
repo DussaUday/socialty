@@ -9,7 +9,7 @@ const ProfilePage = () => {
 	useEffect(() => {
 		const fetchUser = async () => {
 			try {
-				const response = await axios.get(`/api/users/${userId}`); // Adjust the API endpoint as needed
+				const response = await axios.get(`https://sociality-backend-api.onrender.com/users/${userId}`); // Adjust the API endpoint as needed
 				setUser(response.data);
 			} catch (error) {
 				console.error("Error fetching user data:", error);
