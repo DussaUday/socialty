@@ -11,7 +11,7 @@ const AcceptFollowRequest = () => {
     const handleAcceptFollowRequest = async () => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/users/accept-follow/${userId}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/users/accept-follow/${userId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
