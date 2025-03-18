@@ -5,7 +5,7 @@ const useLikeMessage = () => {
 
 	const likeMessage = async (messageId) => {
 		try {
-			await fetch(`/api/messages/like/${messageId}`, { method: "POST" });
+			await fetch(`https://sociality-backend-api.onrender.com/messages/like/${messageId}`, { method: "POST" });
 			setMessages(
 				messages.map((msg) =>
 					msg._id === messageId ? { ...msg, isLiked: true } : msg
