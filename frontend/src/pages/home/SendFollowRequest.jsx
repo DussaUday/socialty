@@ -17,7 +17,7 @@ const SendFollowRequest = ({ userId, userName, profilePic }) => {
     useEffect(() => {
         const checkFollowStatus = async () => {
             try {
-                const response = await fetch(`/api/users/${userId}/follow-status`, {
+                const response = await fetch(`https://sociality-backend-api.onrender.com/users/${userId}/follow-status`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const SendFollowRequest = ({ userId, userName, profilePic }) => {
         const fetchUserPosts = async () => {
             if (isFollowing) {
                 try {
-                    const response = await fetch(`/api/users/${userId}/posts`, {
+                    const response = await fetch(`https://sociality-backend-api.onrender.com/users/${userId}/posts`, {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const SendFollowRequest = ({ userId, userName, profilePic }) => {
     const handleSendFollowRequest = async () => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/users/follow/${userId}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/users/follow/${userId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -99,7 +99,7 @@ const SendFollowRequest = ({ userId, userName, profilePic }) => {
     // Handle like post
     const handleLike = async (postId) => {
         try {
-            const response = await fetch(`/api/posts/like/${postId}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/posts/like/${postId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -128,7 +128,7 @@ const SendFollowRequest = ({ userId, userName, profilePic }) => {
     const handleComment = async (postId) => {
         if (!comment) return;
         try {
-            const response = await fetch(`/api/posts/comment/${postId}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/posts/comment/${postId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -158,7 +158,7 @@ const SendFollowRequest = ({ userId, userName, profilePic }) => {
     // Handle delete post
     const handleDeletePost = async (postId) => {
         try {
-            const response = await fetch(`/api/posts/delete/${postId}`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/posts/delete/${postId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
