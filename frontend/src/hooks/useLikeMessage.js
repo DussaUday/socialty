@@ -5,7 +5,7 @@ const useLikeMessage = () => {
 
 	const likeMessage = async (messageId) => {
 		try {
-			await fetch(`https://socialty.vercel.app/api/messages/like/${messageId}`, { method: "POST" });
+			await fetch(`/api/messages/like/${messageId}`, { method: "POST" });
 			setMessages(
 				messages.map((msg) =>
 					msg._id === messageId ? { ...msg, isLiked: true } : msg
