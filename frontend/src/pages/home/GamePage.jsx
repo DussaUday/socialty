@@ -21,7 +21,7 @@ const GamePage = ({ onGameRequestUpdate }) => {
     useEffect(() => {
         const fetchPendingGameRequests = async () => {
             try {
-                const response = await fetch(`/api/games/pending-requests`, {
+                const response = await fetch(`https://sociality-backend-api.onrender.com/games/pending-requests`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const GamePage = ({ onGameRequestUpdate }) => {
     const handleSendGameRequest = async (userId) => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/games/send-request`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/games/send-request`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const GamePage = ({ onGameRequestUpdate }) => {
     const handleAcceptGameRequest = async (requestId) => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/games/accept-request`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/games/accept-request`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -124,7 +124,7 @@ const GamePage = ({ onGameRequestUpdate }) => {
     const handleRejectGameRequest = async (requestId) => {
         setLoading(true);
         try {
-            const response = await fetch(`/api/games/reject-request`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/games/reject-request`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -168,7 +168,7 @@ const GamePage = ({ onGameRequestUpdate }) => {
 
         setLoading(true);
         try {
-            const response = await fetch(`/api/games/mark-cell`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/games/mark-cell`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -204,7 +204,7 @@ const GamePage = ({ onGameRequestUpdate }) => {
 
         setLoading(true);
         try {
-            const response = await fetch(`/api/games/stop-game`, {
+            const response = await fetch(`https://sociality-backend-api.onrender.com/games/stop-game`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
