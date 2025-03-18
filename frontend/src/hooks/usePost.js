@@ -104,7 +104,7 @@ const usePost = () => {
 
     const deletePost = async (postId) => {
         try {
-            const res = await fetch(https://sociality-backend-api.onrender.com/posts/delete/${postId}`, {
+            const res = await fetch('https://sociality-backend-api.onrender.com/posts/delete/${postId}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${authUser.token}`,
