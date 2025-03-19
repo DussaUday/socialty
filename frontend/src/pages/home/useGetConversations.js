@@ -9,13 +9,12 @@ const useGetConversations = () => {
 		const getConversations = async () => {
 			setLoading(true);
 			try {
-				const token = localStorage.getItem("token");
+				const token = localStorage.getItem("token");  // Retrieve token
 				const res = await fetch("https://sociality-backend-api.onrender.com/users", {
 					method: "GET",
-					credentials: "include",  // Include cookies
 					headers: {
-						"Authorization": `Bearer ${token}`,  // Send token
 						"Content-Type": "application/json",
+						"Authorization": `Bearer ${token}`,  // Include token in the header
 					},
 				});
 				const data = await res.json();
