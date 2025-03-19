@@ -9,29 +9,11 @@ const useGetConversations = () => {
 		const getConversations = async () => {
 			setLoading(true);
 			try {
-				const token = localStorage.getItem("token");
-
-				if (!token) {
-					toast.error("No token found. Please log in.");
-					setLoading(false);
-					return;
-				}
-
-				const res = await fetch("https://sociality-backend-api.onrender.com/users", {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-						"Authorization": `Bearer ${token}`,
-					},
-					credentials: "include", // ✅ Include cookies
-				});
-
-				if (!res.ok) {
-					const errorData = await res.json();
-					throw new Error(errorData.error || "Failed to fetch conversations");
-				}
-
+				const res = await fetch("https://sociality-backend-api.onrender.com/users");
 				const data = await res.json();
+				if (data.error) {
+					throw new Error(data.error);
+				}
 				setConversations(data || []);
 			} catch (error) {
 				toast.error(error.message);
@@ -45,5 +27,4 @@ const useGetConversations = () => {
 
 	return { loading, conversations };
 };
-
 export default useGetConversations;
