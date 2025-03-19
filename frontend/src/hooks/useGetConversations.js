@@ -11,14 +11,11 @@ const useGetConversations = () => {
         const getConversations = async () => {
             setLoading(true);
             try {
-                const token = localStorage.getItem("token");  // Retrieve token
-				const res = await fetch("https://sociality-backend-api.onrender.com/messages", {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-						"Authorization": `Bearer ${token}`,  // Include token in the header
-					},
-				});
+                const res = await fetch("https://sociality-backend-api.onrender.com/messages");
+                const data = await res.json();
+                if (data.error) {
+                    throw new Error(data.error);
+                }
 
                 // Sort conversations by last message timestamp
                 const sortedConversations = data.sort((a, b) => 
