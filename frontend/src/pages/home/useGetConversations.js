@@ -9,7 +9,15 @@ const useGetConversations = () => {
 		const getConversations = async () => {
 			setLoading(true);
 			try {
-				const res = await fetch("https://sociality-backend-api.onrender.com/users");
+				const token = localStorage.getItem("token");
+				const res = await fetch("https://sociality-backend-api.onrender.com/users", {
+					method: "GET",
+					credentials: "include",  // Include cookies
+					headers: {
+						"Authorization": `Bearer ${token}`,  // Send token
+						"Content-Type": "application/json",
+					},
+				});
 				const data = await res.json();
 				if (data.error) {
 					throw new Error(data.error);
